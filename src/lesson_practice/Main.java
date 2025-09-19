@@ -4,11 +4,11 @@ import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
-        if (checkSkobki("{(})")) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
+        MyQueue<Integer> queue = new MyQueue<>();
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        System.out.println(queue.poll()); // 1
     }
 
     // GCD
