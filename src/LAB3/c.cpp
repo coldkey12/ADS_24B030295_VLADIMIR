@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,7 +11,6 @@ long long countInRange(const vector<long long>& A, long long l, long long r) {
     }
     return cnt;
 }
-
 
 int main() {
     int n, q;
@@ -22,7 +23,7 @@ int main() {
 
     sort(A.begin(), A.end());
 
-    while(q--) {
+    while (q--) {
         long long l1, r1, l2, r2;
         cin >> l1 >> r1 >> l2 >> r2;
 
@@ -34,9 +35,10 @@ int main() {
         long long c0verlap = 0;
 
         if (L <= R) {
-            c0verlap = countInRange(A, max(l1,l2), min(r1,r2));
+            c0verlap = countInRange(A, L, R);
         }
 
         cout << (c1 + c2 - c0verlap) << '\n';
     }
+    return 0;
 }
